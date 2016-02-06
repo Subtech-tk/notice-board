@@ -3,32 +3,34 @@
 
 	$code=$_POST['code'];
 
-if (isset($code) && !empty($code) && $code=='10000') 
+	$ccode='10000'; 	//predefined security key set to somthing complex so it cant be guess easily
+
+if (isset($code) && !empty($code) && $code==$ccode) 
 {
 	// excute only if the code is correct	
 	include_once 'dbms/dbms_imp.php';
 
 	$sql_user_table="CREATE TABLE IF NOT EXISTS `userdetail` (
 		`uniqueid` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'unique id of the user for easy reference',
-		  `usn` varchar(40) NOT NULL UNIQUE COMMENT 'usn for login to post',
+		  `usn` varchar(11) NOT NULL UNIQUE COMMENT 'usn for login to post',
 		  `password` varchar(65) NOT NULL COMMENT 'password of the user',
 		  `firstname` varchar(40) NOT NULL COMMENT 'first name',
 		  `surname` varchar(40) NOT NULL COMMENT 'last name',
 		  `gender` varchar(2) NOT NULL COMMENT 'gender',
 		  `dob` date NOT NULL COMMENT 'dat of birth',
-		  `status` varchar(20) NOT NULL COMMENT 'status of user i.e active, inactive or deactive',
-		  `level` varchar(10) NOT NULL DEFAULT 'user' COMMENT 'user level i.e user or admin'
+		  `pos` varchar(20) COMMENT 'user holding any position or not',
+		  `level` varchar(10) NOT NULL DEFAULT 'user' COMMENT 'user level i.e user or admin or developer'
 		) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;";
 
 	$result_user_table=$connection->query($sql_user_table);
 
 	if (!$result_user_table) 
 	{
-		echo "Error in creating user table  </br>".mysqli_error($connection);
+		echo "</br>Error in creating user table  </br>".mysqli_error($connection)."</br>";
 	} 
 	else
 	{
-		echo "User table created.</br>";
+		echo "</br>User table created.</br>";
 	}
 	
 	$sql_notice_table="CREATE TABLE IF NOT EXISTS `notice` (
@@ -41,7 +43,7 @@ if (isset($code) && !empty($code) && $code=='10000')
 		  `description` longtext NOT NULL COMMENT 'full description',
 		  `piroity` varchar(10) COMMENT 'piroity of the post',
 		  `exlink` text COMMENT 'external link if any',
-		  `img` text COMMENT 'image if any',
+		  `img` text COMMENT 'image if any only link',
 		  `uploader` int(11) NOT NULL COMMENT 'uploader id',
 		  `dated` datetime NOT NULL UNIQUE COMMENT 'date and time on which it is posted'
 		) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 COMMENT='main notice table';";
@@ -50,11 +52,11 @@ if (isset($code) && !empty($code) && $code=='10000')
 
 	if (!$result_user_table) 
 	{
-		echo "Error in creating notice table  </br>".mysqli_error($connection);
+		echo "</br>Error in creating notice table  </br>".mysqli_error($connection)."</br>";
 	} 
 	else
 	{
-		echo "Notice table created.</br>";
+		echo "</br>Notice table created.</br>";
 	}
 
 } 
@@ -74,6 +76,7 @@ else
         <input type="submit" name="install" value="install" size="20">
         </div>
     </form>
+
 <?php
 }
 ?>

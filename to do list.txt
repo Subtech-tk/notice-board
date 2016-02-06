@@ -1,10 +1,11 @@
 // file to track record of things to do in this project and the things that are done
-add core structure
-add login system
-add registration system
-add db for storing data
-add listing data technique
+create a database structure 		- done 06/02/2016 24:00 -aman
+add db for storing data 			- done 06/02/2016 24:00 -aman
+add core structure					- done 06/02/2016 24:40 -aman
+add login system					- done 06/02/2016 24:40 -aman
+add registration system				- done 06/02/2016 24:40 -aman
 add index page
+add listing data techniques			
 add limit to 10 display page
 change the background image
 change the header to the drawer style
