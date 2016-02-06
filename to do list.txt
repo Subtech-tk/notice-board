@@ -1,0 +1,13 @@
+// file to track record of things to do in this project and the things that are done
+add core structure
+add login system
+add registration system
+add db for storing data
+add listing data technique
+add index page
+add limit to 10 display page
+change the background image
+change the header to the drawer style
+add admin dashboard
+add notice adding feature
+
