@@ -40,6 +40,7 @@
                 $notice= new notice($rows[0]);
                 otr("$notice->title","$notice->bref","entry.php?ref=$rows","");
               }
+              otr("$notice->title","$notice->bref","entry.php?ref=$rows","");
          ?> 
         </div>
     <?php

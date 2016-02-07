@@ -17,4 +17,6 @@
         location.href = target;
       });
     });
- </script>
+</script>
+<?php // adding the java script to add effects in the site;?>
+<script src="material.min.js"></script>
