@@ -24,6 +24,7 @@
             if (islogin()) 
             {
               ?>
+              <a href="add_notice" class="mdl-layout__tab">Add Notice</a>
               <a href="logout" class="mdl-layout__tab">Logout</a>
               <?php
             }

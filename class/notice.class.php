@@ -24,6 +24,7 @@
 		
     public $id;
     public $title;
+    public $tags;
     public $bref;
     public $description;
     public $piroity;
