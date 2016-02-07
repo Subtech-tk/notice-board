@@ -43,8 +43,6 @@
               otr("$notice->title","$notice->bref","entry.php?ref=$rows","");
          ?> 
         </div>
-    <?php // adding the java script to add effects in the site;?>
-        <script src="material.min.js"></script>
     <?php
     	require 'footer.php';
     ?>
