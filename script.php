@@ -17,4 +17,4 @@
         location.href = target;
       });
     });
- </script>
+</script>
