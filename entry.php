@@ -13,9 +13,9 @@
 
   $notice = new notice($ids);
   
-  $title=$notice->booktitle;
+  $title=$notice->title;
   $keywords=$notice->tags;
-  $description=$notice->bookbrefdesc;
+  $description=$notice->bref;
  
 ?>
 
@@ -51,14 +51,13 @@
                 height: 100px;
               }
             </style>
-              <iframe src="<?php echo "$bookbo->preview";?>" width="880" height="980" frameborder="0"></iframe>
             <div class="mdl-card__media mdl-color-text--grey-50">
                 <h3><?php echo $notice->title; ?></h3>
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
               <div class="minilogo"></div>
               <div>
-                <strong><?php echo "By- $bookbo->fname"; ?></strong>
+                <strong><?php echo "By- $notice->fname"; ?></strong>
                 <span><?php //only if something else is required echo "Publisher- ".$bookbo->publisher; ?></span>
               </div>
               <div class="section-spacer"></div>
@@ -104,8 +103,7 @@
       </main>
       <!--<div class="mdl-layout__obfuscator"></div>-->
     </div>
-    <a href="<?php echo $bookbo->durl ;?>" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast"><?php echo  "Download";//$bookbo->booktitle;?></a>
-    <script src="../../material.min.js"></script>
+    <script src="material.min.js"></script>
   </div>
 </body>
 </html>

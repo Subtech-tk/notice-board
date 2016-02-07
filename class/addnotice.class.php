@@ -15,8 +15,11 @@
 			# code...
 		}
 
-		public function add_notice()
+		public function add_notice($uid)
 		{
+			$this->get_user($uid);
+			$this->uploader=$uid;
+			$this->dated=date('Y-m-d H:i:s');
 			include 'dbms/dbms_imp.php';
 
 			$insert_query="INSERT INTO `notice` (`id`, `title`, `cat`, `tags`, `bref`, `description`, `piroity`, `exlink`,`img`,`uploader`,`dated`) 
