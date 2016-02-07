@@ -33,7 +33,7 @@
 			} 
 			else 
 			{
-				echo "Email and password combination is not correct";
+				echo "usn and password combination is not correct";
 			}
 			
 		}
