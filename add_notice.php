@@ -141,7 +141,7 @@
                       $add_notice->img='NULL';
                     }
                     
-                    $add_notice->add_notice();
+                    $add_notice->add_notice($userid);
 
                     var_dump($add_notice);	// only for testing 
                     
@@ -184,7 +184,7 @@
                         $result=category_list();
                        for ($i=0; $i < count($result); ++$i) 
                        { 
-                         echo "<option value=".$result[$i].">".$result[$i]."</option>";
+                         echo "<option value=\"".$result[$i]."\">".$result[$i]."</option>";
                        }
                       ?>
                         </select>
@@ -212,7 +212,7 @@
                         ?>
                       </legend>
                       <div class="mdl-textfield mdl-js-textfield">
-                      <textarea class="mdl-textfield__input" type="text" rows="3" cols="50" id="bref" ><?php if (isset($bref)) {echo "$bref";}?></textarea>
+                      <textarea class="mdl-textfield__input" type="text" rows="3" cols="50" id="bref" name="bref" value="<?php if (isset($bref)) {echo "$bref";}?>"><?php if (isset($bref)) {echo "$bref";}?></textarea>
                       </div>
                     </fieldset>
                     <br/>
@@ -226,7 +226,7 @@
                         ?>
                       </legend>
                       <div class="mdl-textfield mdl-js-textfield">
-                      <textarea class="mdl-textfield__input" type="text" rows="5" cols="50" id="description" ><?php if (isset($desc)) {echo "$desc";}?></textarea>
+                      <textarea class="mdl-textfield__input" type="text" rows="5" cols="50" id="desc" name="desc" value="<?php if (isset($desc)) {echo "$desc";}?>"><?php if (isset($desc)) {echo "$desc";}?></textarea>
                       </div>
                     </fieldset>
                     <br/>

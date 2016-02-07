@@ -34,7 +34,7 @@ if (isset($code) && !empty($code) && $code==$ccode)
 	}
 	
 	$sql_notice_table="CREATE TABLE IF NOT EXISTS `notice` (
-		`id` int(10) unsigned NOT NULL PRIMARY KEY COMMENT 'hold unique id for quick referecne',
+		`id` int(10) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'hold unique id for quick referecne',
 		  `title` varchar(200) NOT NULL COMMENT 'title of notice',
 		  `cat` varchar(50) NOT NULL COMMENT 'category',
 		  `subcat` varchar(50) COMMENT 'Sub category',

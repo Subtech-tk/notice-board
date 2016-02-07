@@ -3,7 +3,7 @@
   $page_name="index.php";
 	
 	$title="Index";
-
+  include 'core.php';
 ?>
 <!doctype html>
 <html lang="en-uk">
@@ -22,7 +22,6 @@
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
          <?php
-              include_once 'core.php';
               include_once 'display/functions/get_image.func.php';
               include_once 'display/functions/otr.func.php';
               include_once 'display/functions/amazing.func.php';
@@ -38,9 +37,8 @@
               while ($rows=$result->fetch_array())
               { 
                 $notice= new notice($rows[0]);
-                otr("$notice->title","$notice->bref","entry.php?ref=$rows","");
+                otr("$notice->title","$notice->bref","entry.php?ref=".$rows[0]);
               }
-              otr("$notice->title","$notice->bref","entry.php?ref=$rows","");
          ?> 
         </div>
     <?php
