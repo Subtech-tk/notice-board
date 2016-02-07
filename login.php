@@ -43,7 +43,7 @@
             else 
             {
                 //login forum
-            	include 'dispaly/functions/login.func.php';
+            	include 'display/functions/login.func.php';
              	login($message='');
           	}
           ?>

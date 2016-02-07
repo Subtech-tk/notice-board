@@ -32,8 +32,8 @@
 		{
 			include 'dbms/dbms_imp.php';
 
-			$insert_query="INSERT INTO `userdetail` (`uniqueid`, `usn`, `password`, `firstname`, `surname`, `gender`, `dob`, `status`) 
-				VALUES ('','$this->usn','','$this->fname','$this->lname','$this->gender','$this->dob','$this->status')";
+			$insert_query="INSERT INTO `userdetail` (`uniqueid`, `usn`, `password`, `firstname`, `surname`, `gender`, `dob`, `pos`) 
+				VALUES ('','$this->usn','','$this->fname','$this->lname','$this->gender','$this->dob','')";
 			
 			$mysql_query_run=$connection->query($insert_query);
 			
@@ -74,7 +74,7 @@
 
 		public function add_password()	// function to add the password to corresponding userid
 		{
-			$this->password=$this->password_hash_gen($this->email,$this->password,$this->uid);
+			$this->password=$this->password_hash_gen($this->usn,$this->password,$this->uid);
 
 			include 'dbms/dbms_imp.php';
 
