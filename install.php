@@ -1,4 +1,4 @@
-<?
+<?php
 	// query to create database 
 
 	$code=$_POST['code'];
