@@ -31,7 +31,7 @@
               $count=$result->num_rows;
               if ($count==0) 
               {
-                amazing('OOPs no notices are there',"no notice exist as this is in development mode","$http_referer");
+                amazing('OOPs no notices are there',"no notice exist as this is in development mode","#");
               }
               
               $i=1;
