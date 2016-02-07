@@ -30,17 +30,17 @@ function login($message='')
 
               echo "$message";      // to display any specific message before login
 
-              $email=@$_POST['emailid'];
+              $usn=@$_POST['usn'];
               $password=@$_POST['password'];
 
-              if (isset($email) && isset($password)) 
+              if (isset($usn) && isset($password)) 
               {
-                if (!empty($email) && !empty($password)) 
+                if (!empty($usn) && !empty($password)) 
                 {
                   include 'dbms/dbms_imp.php';
-                  $email=netutralize($email,$connection);
+                  $email=netutralize($usn,$connection);
                   mysqli_close($connection);
-                  $login_user= new login($email,$password);
+                  $login_user= new login($usn,$password);
                 } 
                 else 
                 {
@@ -53,9 +53,9 @@ function login($message='')
                 <form action="<?php echo $current_file; ?>" method="POST" enctype="" target="">
                   <div class="mdl-textfield mdl-js-textfield">
                     <fieldset>
-                      <legend>Email id :</legend>
-                      <input class="mdl-textfield__input" id="email" type="email" name="emailid" value="<?php if (isset($email)) {echo "$email";}?>">
-                      <!--<label class="mdl-textfield__label" for="email">email</label>-->
+                      <legend>USN:</legend>
+                      <input class="mdl-textfield__input" id="usn" type="text" name="usn" value="<?php if (isset($usn)) {echo "$usn";}?>">
+                      <!--<label class="mdl-textfield__label" for="usn">usn</label>-->
                     </fieldset>
                     <br/>
                     <fieldset>
