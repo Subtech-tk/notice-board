@@ -61,7 +61,7 @@
             else
             {
               include 'core.php';
-              include_once 'functions/category_list.func.php';
+              include_once 'functions/list_col.func.php';
 
               // variables for the adding notice
               $title=$_POST['title'];
