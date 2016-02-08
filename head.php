@@ -1,4 +1,4 @@
-<?
+<?php
 	// head.php
 	/*
 		this file contains the head tag of html which is included in all pages. (front line only)

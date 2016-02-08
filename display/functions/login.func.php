@@ -73,7 +73,16 @@ function login($message='')
                   </div>
                 </form>
               </p>
-            </div>   
+            </div>
+            <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+              <div class="section-spacer"></div>
+              <div>
+                <strong>
+                  New here. Register <a href="register">here.</a>
+                </strong>
+              </div>
+               <div class="section-spacer"></div>
+            </div>  
           </div>
 
 <?php
