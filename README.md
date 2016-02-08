@@ -20,11 +20,11 @@ structure
 
 ./.htaccess-- it a file to overide apache server settings for that part of the site.
 
-./head.php-- Contains the HTML <head> tag it conatins embeded PHP to customize according to the page.
+./head.php-- Contains the HTML head tag it conatins embeded PHP to customize according to the page.
 
-./header.php-- Contains the HTML <header> tag it contains site title and dynamic menue according to the page and user.
+./header.php-- Contains the HTML header tag it contains site title and dynamic menue according to the page and user.
 
-./footer.php-- Contains the HTML <footer> tag which contains footer information.
+./footer.php-- Contains the HTML footer tag which contains footer information.
 
 ./install.php-- Simple script to Create tables required by this site to work.
 
