@@ -26,7 +26,7 @@
               include_once 'display/functions/otr.func.php';
               include_once 'display/functions/amazing.func.php';
               
-              $result=$connection->query("SELECT `id` FROM `notice`");  
+              $result=$connection->query("SELECT `id` FROM `notice` ORDER BY `dated` DESC");  
               $count=$result->num_rows;
               if ($count==0) 
               {
@@ -42,6 +42,7 @@
          ?> 
         </div>
     <?php
+      // including the footer
     	require 'footer.php';
     ?>
       </main>
@@ -49,6 +50,7 @@
 </div>
 </body>
 <?php
+  // including the additional script
 	require 'script.php';
 ?>
 </html>

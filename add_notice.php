@@ -73,6 +73,9 @@
               $exlink=$_POST['exlink'];     //can be null
               $img=$_POST['img'];           //can be null
               
+              var_dump($cat);
+              echo "<br/>";
+              var_dump($piroity);
               // if the post data is set 
               if (isset($title) && isset($cat) && isset($tags) && isset($bref) && isset($desc)) 
               {
@@ -86,6 +89,7 @@
                   // neutralizing the data 
                   include 'dbms/dbms_imp.php';
                   $title=netutralize($title,$connection);
+                  $cat=netutralize($cat,$connection);
                   $tags=netutralize($tags,$connection);
                   $bref=netutralize($bref,$connection);
                   $desc=netutralize($desc,$connection);
@@ -111,6 +115,7 @@
                   {
                     $add_notice = new addnotice ;
                     $add_notice->title=$title;
+                    $add_notice->cat=$cat;
                     $add_notice->tags=$tags;
                     $add_notice->bref=$bref;
                     $add_notice->description=$desc;
@@ -120,7 +125,7 @@
                     } 
                     else
                     {
-                      $add_notice->piroity='3';   //3 means low pirority
+                      $add_notice->piroity='0';   //0 means low pirority
                     }
                     
                     if (isset($exlink) && !empty($exlink)) 
@@ -178,13 +183,15 @@
                             }
                         ?>
                       </legend>
-                        <select class="mdl-textfield__input " name="cat" size="1">
+                        <select class="mdl-textfield__input" name="cat" size="1">
                           <option value="">select</option>
                       <?php
                         $result=category_list();
                        for ($i=0; $i < count($result); ++$i) 
                        { 
-                         echo "<option value=\"".$result[$i]."\">".$result[$i]."</option>";
+                        ?>
+                          <option value="<?php echo strtolower($result[$i]); ?>"><?php echo $result[$i];?></option>
+                        <?php
                        }
                       ?>
                         </select>
@@ -233,13 +240,13 @@
                       <fieldset>
                       <legend>Pirorty (optional):
                       </legend>
-                        <select class="mdl-textfield__input " name="cat" size="1">
+                        <select class="mdl-textfield__input " name="piroity" size="1">
                           <option value="">select</option>
                       <?php
                         $result=pirorty_list();
                        for ($i=0; $i < count($result); ++$i) 
                        { 
-                         echo "<option value=".$i.">".$result[$i]."</option>";
+                         echo "<option value=\"".$i."\">".$result[$i]."</option>";
                        }
                       ?>
                         </select>
