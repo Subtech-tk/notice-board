@@ -85,7 +85,14 @@
               
               <div class="section-spacer"></div>
               <div>
-                <strong><!--any other thing--></strong>
+                <strong>
+                  <?php 
+                    if (isset($notice->exlink) && !empty($notice->exlink)) 
+                      {
+                        echo "For More information Vist <br/> $notice->exlink";
+                      }
+                  ?>
+                </strong>
               </div>
             </div>
             
