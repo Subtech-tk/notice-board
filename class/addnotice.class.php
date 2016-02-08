@@ -9,7 +9,7 @@
 
 	class addnotice extends notice
 	{
-		
+		public $cat; 	// category of the notice
 		function __construct()
 		{
 			# code...
