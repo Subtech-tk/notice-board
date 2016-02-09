@@ -27,7 +27,6 @@
 			
 			$mysql_query_run=$connection->query($insert_query);
 			
-			mysqli_close($connection);
 			
 			if(!$mysql_query_run)
 			{
@@ -39,6 +38,7 @@
 				// redirect to somewhere 
 				echo "notice added sucessfully"; 	//temp message untill redirect is made
 			}
+			mysqli_close($connection);
 		}
 	}
 ?>
