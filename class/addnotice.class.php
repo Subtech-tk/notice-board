@@ -9,7 +9,6 @@
 
 	class addnotice extends notice
 	{
-		public $cat; 	// category of the notice
 		function __construct()
 		{
 			# code...
@@ -36,7 +35,31 @@
 			else
 			{
 				// redirect to somewhere 
-				echo "notice added sucessfully"; 	//temp message untill redirect is made
+				echo "Notice added sucessfully"; 	//temp message untill redirect is made
+			}
+			mysqli_close($connection);
+		}
+
+		public function update_notice($ids)
+		{
+			$this->id=$ids; 	//updating the id of notice
+
+			include 'dbms/dbms_imp.php';
+
+			$update_query="UPDATE `notice` SET `title`='$this->title',`bref`='$this->bref',`description`='$this->description',`exlink`='$this->exlink' WHERE `id` = '$this->id'";
+			
+			$mysql_query_run=$connection->query($update_query);
+			
+
+			if(!$mysql_query_run)
+			{
+				// error occurs
+				echo "<br>Error writing data".mysqli_error($connection);
+			}
+			else
+			{
+				// redirect to somewhere 
+				echo "Notice Updated sucessfully  "; 	//temp message untill redirect is made
 			}
 			mysqli_close($connection);
 		}

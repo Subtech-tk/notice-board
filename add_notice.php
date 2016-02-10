@@ -34,7 +34,19 @@
           </a>
         </div>-->
         <div class="demo-blog__posts mdl-grid">
-          <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+          
+          <?php
+            // user can only post a notice iff he/she is logged in
+            if (!islogin())   //if user is not loged in prompt login
+            {
+              //echo "You need to be loged in to post a notice. <br/> Login here <a href=\"login\">Login</a>";
+              include_once 'display/functions/login.func.php';
+              login('You need to be logged in to post a notice.');
+            }
+            else    //display the add notice forum 
+            {
+            ?>
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
             <style>
               .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media 
               {
@@ -49,17 +61,8 @@
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
               <p>
-                <!--login forum-->
-          
-                <!-- Simple Textfield -->
-          <?php
-            // user can only post a notice iff he/she is logged in
-            if (!islogin())   //if user is not loged in prompt login
-            {
-              echo "You need to be loged in to post a notice. <br/> Login here <a href=\"login\">Login</a>";
-            }
-            else
-            {
+                <!-- Add notice forum -->
+            <?php
               include 'core.php';
               include_once 'functions/category_list.func.php';
 
@@ -73,9 +76,6 @@
               $exlink=$_POST['exlink'];     //can be null
               $img=$_POST['img'];           //can be null
               
-              var_dump($cat);
-              echo "<br/>";
-              var_dump($piroity);
               // if the post data is set 
               if (isset($title) && isset($cat) && isset($tags) && isset($bref) && isset($desc)) 
               {
@@ -219,7 +219,7 @@
                         ?>
                       </legend>
                       <div class="mdl-textfield mdl-js-textfield">
-                      <textarea class="mdl-textfield__input" type="text" rows="3" cols="50" id="bref" name="bref" value="<?php if (isset($bref)) {echo "$bref";}?>"><?php if (isset($bref)) {echo "$bref";}?></textarea>
+                      <textarea class="mdl-textfield__input" type="text" rows="3" cols="60" id="bref" name="bref" value="<?php if (isset($bref)) {echo "$bref";}?>"><?php if (isset($bref)) {echo "$bref";}?></textarea>
                       </div>
                     </fieldset>
                     <br/>
@@ -233,7 +233,7 @@
                         ?>
                       </legend>
                       <div class="mdl-textfield mdl-js-textfield">
-                      <textarea class="mdl-textfield__input" type="text" rows="5" cols="50" id="desc" name="desc" value="<?php if (isset($desc)) {echo "$desc";}?>"><?php if (isset($desc)) {echo "$desc";}?></textarea>
+                      <textarea class="mdl-textfield__input" type="text" rows="6" cols="60" id="desc" name="desc" value="<?php if (isset($desc)) {echo "$desc";}?>"><?php if (isset($desc)) {echo "$desc";}?></textarea>
                       </div>
                     </fieldset>
                     <br/>
@@ -268,12 +268,12 @@
                   </div>
                 </form>
               </p>
-            <?php
-              }
-            ?>
             </div>   
           </div>
           <!--navigation panel for large database-->
+            <?php
+              }
+            ?>
         </div>
     <?php
       require 'footer.php';

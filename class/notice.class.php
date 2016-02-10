@@ -24,6 +24,8 @@
 		
     public $id;
     public $title;
+    public $cat;  
+    public $subcat;
     public $tags;
     public $bref;
     public $description;
@@ -48,6 +50,8 @@
         $rows=$resultb->fetch_array();  
         $this->id=$rows[0];
         $this->title=$rows[1];
+        $this->cat=$rows[2];
+        $this->subcat=$rows[3];
         $this->tags=$rows[4];
         $this->bref=$rows[5];
         $this->description=$rows[6];
@@ -66,4 +70,5 @@
 		}
 	// end of class
   }
+
 ?>
