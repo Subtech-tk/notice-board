@@ -12,7 +12,9 @@
   mysqli_close($connection);
 
   $notice = new notice($ids);
-  
+  $current_user = new user ;
+  $current_user->get_user($userid);
+
   $title=$notice->title;
   $keywords=$notice->tags;
   $description=$notice->bref;
@@ -110,6 +112,14 @@
       </main>
       <!--<div class="mdl-layout__obfuscator"></div>-->
     </div>
+    <?php
+      if (($userid==$notice->uploader) || ($current_user->level=='admin') || ($current_user->level=='dev')) 
+      {
+    ?>
+    <a href="edit_notice?ref=<?php echo $ids; ?>" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast"><?php echo  "Edit This Notice";?></a>
+    <?php
+      }
+    ?>
     <script src="material.min.js"></script>
   </div>
 </body>
