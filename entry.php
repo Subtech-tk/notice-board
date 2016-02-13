@@ -49,8 +49,8 @@
             <style>
               .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media 
               {
-                /*background-image: url('images/road_big.jpg');*/
-                height: 100px;
+                background-image: url('images/road_big.jpg');
+                height: 300px;
               }
             </style>
             <div class="mdl-card__media mdl-color-text--grey-50">
@@ -60,7 +60,14 @@
               <div class="minilogo"></div>
               <div>
                 <strong><?php echo "By- $notice->fname"; ?></strong>
-                <span><?php //only if something else is required echo "Publisher- ".$bookbo->publisher; ?></span>
+                <span>
+                  <?php
+                    if (isset($notice->pos) && !empty($notice->pos)) 
+                      {
+                        echo "$notice->pos";
+                      }   
+                  ?>
+                </span>
               </div>
               <div class="section-spacer"></div>
               <div class="meta__favorites">
@@ -84,14 +91,22 @@
             </div>
 
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-              
+              <div>
+                <?php
+                  if (function_exists('get_date')) 
+                  {
+                    $dated=get_date($notice->dated);
+                    echo "Posted on - $dated";
+                  }
+                ?>
+              </div>
               <div class="section-spacer"></div>
               <div>
                 <strong>
                   <?php 
                     if (isset($notice->exlink) && !empty($notice->exlink)) 
                       {
-                        echo "For More information Vist <br/> $notice->exlink";
+                        echo "For More information Vist <a href=\"$notice->exlink\"> here </a><br/> $notice->exlink";
                       }
                   ?>
                 </strong>

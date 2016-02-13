@@ -37,7 +37,7 @@
               while ($rows=$result->fetch_array())
               { 
                 $notice= new notice($rows[0]);
-                otr("$notice->title","$notice->bref","entry.php?ref=".$rows[0]);
+                otr("$notice->title","$notice->bref","entry.php?ref=".$rows[0],$notice->dated);
               }
          ?> 
         </div>

@@ -11,12 +11,17 @@
 		$link=	URL to ling the card 
 	*/
 
-	function otr($heading='heading',$content='content goes here',$link='#',$images='learn')
+	function otr($heading='heading',$content='content goes here',$link='#',$dated,$images='learn')
 	{
 		
 		if(function_exists('get_image'))
 		{
 			$image=get_image($images);
+		}
+
+		if (function_exists('get_date')) 
+		{
+			$dated=get_date($dated);
 		}
 ?>
 
@@ -35,11 +40,11 @@
 		<?php echo "$content";?>
 	</div>
 	<div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-		<!--<div class="minilogo"></div>
+		<!--<div class="minilogo"></div>-->
 		<div>
-			<strong>The Newist</strong>
-			<span>2 days ago</span>
-		</div>-->
+			<strong></strong>
+			<span><?php echo "Posted on - $dated";?></span>
+		</div>
 	</div>
 </div>
 <?php
