@@ -49,7 +49,7 @@
             <style>
               .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media 
               {
-                /*background-image: url('images/road_big.jpg');*/
+                background-image: url('images/road_big.jpg');
                 height: 100px;
               }
             </style>

@@ -9,10 +9,7 @@
 	function get_image($key)
 	{
 		# code...
-		if ($key=='Web Development') 
-		{
-			$key='web';
-		}
+		// code to handle the images
 		$image='images/'.$key.'.jpg';
 
 		return $image;
