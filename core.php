@@ -6,6 +6,7 @@ include 'dbms/dbms_imp.php';
 //include_once "functions/";
 include_once 'functions/islogin.func.php';
 include_once 'display/functions/get_image.func.php';
+include_once 'display/functions/get_date.func.php';
 include_once 'functions/validate.func.php';
 include_once 'functions/netutralize.func.php';
 
