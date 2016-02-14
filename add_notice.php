@@ -50,8 +50,8 @@
             <style>
               .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media 
               {
-                background-image: url('images/join_us.jpg');
-                height: 400px;
+                background-image: url('images/road_big.jpg');
+                height: 300px;
               }
             </style>
             <div class="mdl-card__media mdl-color-text--grey-50">
