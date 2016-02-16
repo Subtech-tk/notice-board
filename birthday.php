@@ -54,15 +54,15 @@
               {
                 amazing('OOP\'s no Birthday Today',"a message","#");
               }
-              
-              $i=1;
-              while ($rows=$result->fetch_array())
-              { 
-                birthday($rows[0]);
+              else
+              {
+                while ($rows=$result->fetch_array())
+                { 
+                  birthday($rows[0]);
+                }
+
+                birthday_comment();
               }
-
-              birthday_comment();
-
           ?>
           <!--navigation panel for large database-->
         </div>
