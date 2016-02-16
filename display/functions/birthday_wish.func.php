@@ -44,7 +44,7 @@
 
 <div class="comment mdl-color-text--grey-700">
   <header class="comment__header">
-    <img src="images/co1.jpg" class="comment__avatar">
+    <img src="images/avatar.png" class="comment__avatar">
       <div class="comment__author">
         <strong><?php echo "By - ".$bdobj->fname." ".$bdobj->lname; ?></strong>
         <span><?php ?></span>
