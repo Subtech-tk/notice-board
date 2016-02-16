@@ -50,7 +50,7 @@ if (isset($code) && !empty($code) && $code==$ccode)
 	
 	$result_notice_table=$connection->query($sql_notice_table);
 
-	if (!$result_user_table) 
+	if (!$result_notice_table) 
 	{
 		echo "</br>Error in creating notice table  </br>".mysqli_error($connection)."</br>";
 	} 
@@ -59,6 +59,25 @@ if (isset($code) && !empty($code) && $code==$ccode)
 		echo "</br>Notice table created.</br>";
 	}
 
+	$sql_birthday_table="CREATE TABLE IF NOT EXISTS `bd_comments` (
+		`bcid` int(100) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'unique id to track comments',
+		  `userid` int(100) NOT NULL COMMENT 'user id who commented',
+		  `bd_user` int(100) NOT NULL COMMENT 'user whose birthday is',
+		  `comment` text NOT NULL COMMENT 'comments',
+		  `date` date NOT NULL COMMENT 'date on which it is commented',
+		  `timed` time NOT NULL COMMENT 'time on which it is commented'
+		) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 COMMENT='birthday comment table';";
+	
+	$result_birthday_table=$connection->query($sql_birthday_table);
+
+	if (!$result_birthday_table) 
+	{
+		echo "</br>Error in creating birthday table  </br>".mysqli_error($connection)."</br>";
+	} 
+	else
+	{
+		echo "</br>Birthday table created.</br>";
+	}
 } 
 else
 {
