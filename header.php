@@ -19,6 +19,7 @@
         <!--<div class="section-spacer"></div>-->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
           <a href="index" class="mdl-layout__tab is-active">Home</a>
+          <a href="birthday" class="mdl-layout__tab is active">Today's Birthday</a>
           <?php
             include_once 'functions/islogin.func.php';
             if (islogin()) 
