@@ -1,5 +1,5 @@
 <?php
-//ini_set('display_errors','0');	//to be set active when site goes live
+ini_set('display_errors','0');	//to be set active when site goes live
 // core file must be include in all pages
 
 include 'dbms/dbms_imp.php';
