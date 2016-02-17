@@ -30,7 +30,7 @@
               $count=$result->num_rows;
               if ($count==0) 
               {
-                amazing('OOPs no notices are there',"no notice exist as this is in development mode","#");
+                amazing('OOPs no notices are there',"no notice exist because no one notice has been posted","#");
               }
               
               $i=1;

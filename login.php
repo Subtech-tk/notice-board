@@ -38,7 +38,7 @@
             if (islogin()) 
             {
             	include 'display/functions/amazing.func.php';
-            	amazing($heading='Already loged in',$content='It seems You are alrady loged in.<br/>No need to login Again. :)',$link='#');
+            	amazing($heading='Already loged in',$content='It seems You are already loged in.<br/>No need to login Again. :)',$link='#');
             } 
             else 
             {

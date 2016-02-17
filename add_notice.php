@@ -148,7 +148,7 @@
                     
                     $add_notice->add_notice($userid);
 
-                    var_dump($add_notice);	// only for testing 
+                    //var_dump($add_notice);	// only for testing 
                     
                     //put a redirector to some page 
                   } 

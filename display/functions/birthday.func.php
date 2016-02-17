@@ -30,7 +30,7 @@
               <div class="minilogo"></div>
               <div>
                 <strong><?php echo "Many-Many Happy returns of the Day"; ?></strong>
-                <span><?php echo "By - Team team name "?></span>
+                <span><?php echo "By - Notice Board Team"?></span>
               </div>
               <div class="section-spacer"></div>
               <div class="meta__favorites">
@@ -57,7 +57,7 @@
               
               <div class="section-spacer"></div>
               <div>
-                <strong><?php echo "Cool line go's here";?></strong>
+                <strong><?php echo "Cool line goes here";?></strong>
               </div>
             </div>
           </div>
