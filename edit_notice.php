@@ -159,7 +159,7 @@
                     
                     $add_notice->update_notice($ids);
 
-                    var_dump($add_notice);	// only for testing 
+                    //var_dump($add_notice);	// only for testing 
                     
                     //put a redirector to some page 
                   } 

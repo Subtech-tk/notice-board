@@ -8,7 +8,7 @@
 	*/
 	function category_list()
 	{
-		$array = array('Birthday','General','Placement');
+		$array = array('General','Placement');
 		
 		asort($array);
 		

@@ -112,7 +112,7 @@
                     $reg_user->add();
                     //$reg_user->get_userid();
                     //$reg_user->add_password(); 
-                    var_dump($reg_user);
+                    //var_dump($reg_user);
                     
                     //put a redirector to some page 
                   } 
