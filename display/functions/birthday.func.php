@@ -49,7 +49,13 @@
             
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
               <p>
-                <?php echo "A nice message here ";?>
+                <?php echo "Today is your birthday! <br/> 
+                  May you receive even more blessings than you ask for, 
+                  and may all good things continue to come your way. <br/>
+                  Happy Birthday!</br> 
+                  Life is what you make of Keep making yours count each and every day. 
+                  The skies are clear for you at all times.
+                  <br/>Happy Birthday!";?>
               </p>
             </div>
 
@@ -57,7 +63,8 @@
               
               <div class="section-spacer"></div>
               <div>
-                <strong><?php echo "Cool line goes here";?></strong>
+                <strong><?php echo "We wish you a Happy Birthday (3X), and a whole lot of cake ;).";?>
+                </strong>
               </div>
             </div>
           </div>
