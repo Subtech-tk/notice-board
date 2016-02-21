@@ -49,13 +49,11 @@
             
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
               <p>
-                <?php echo "Today is your birthday! <br/> 
-                  May you receive even more blessings than you ask for, 
-                  and may all good things continue to come your way. <br/>
-                  Happy Birthday!</br> 
-                  Life is what you make of Keep making yours count each and every day. 
-                  The skies are clear for you at all times.
-                  <br/>Happy Birthday!";?>
+                <?php echo "TADAA.. Happy birthday!<br/> 
+                  Quick!Blow the candle and make your wish!</br> 
+                  Smile while you still have teeth.. </br>
+                  Every birthday presents a new page in your life.Keep doing good and filling that page with good deeds..</br>
+                  <br/>Birthdays are good for health.Studies shows people who have more birthdays live longer :-p";?>
               </p>
             </div>
 
