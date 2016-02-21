@@ -72,7 +72,7 @@
       </main>
       <!--<div class="mdl-layout__obfuscator"></div>-->
     </div>
-    <script src="../../material.min.js"></script>
+    <script src="material.min.js"></script>
   </div>
 </body>
 </html>
