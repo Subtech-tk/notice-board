@@ -86,7 +86,9 @@
             
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
               <p>
+              <pre>
                 <?php echo $notice->description;?>
+              </pre>
               </p>
             </div>
 

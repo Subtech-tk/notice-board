@@ -30,7 +30,7 @@
               $count=$result->num_rows;
               if ($count==0) 
               {
-                amazing('OOPs no notices are there',"no notice exist because no one notice has been posted","#");
+                amazing('Oh a blank notice :-P',"Hey notice board here...searching for notices..catch u later","#");
               }
               
               $i=1;

@@ -11,7 +11,7 @@
 		$link=	URL to ling the card 
 	*/
 
-	function otr($heading='heading',$content='content goes here',$link='#',$dated,$images='learn')
+	function otr($heading='heading',$content='content goes here',$link='#',$dated,$images='shopping')
 	{
 		
 		if(function_exists('get_image'))
