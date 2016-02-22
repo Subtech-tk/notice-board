@@ -115,6 +115,8 @@
                     //var_dump($reg_user);
                     
                     //put a redirector to some page 
+                    echo "You are Sucessfully Registerd <br/> Login to Continue.";
+                    header('location: sucess.php');
                   } 
                 } 
                 else 
@@ -233,6 +235,9 @@
                     </div>
                   </div>
                 </form>
+                <?php
+                  start:echo " ";
+                ?>
               </p>
             </div>   
           </div>
