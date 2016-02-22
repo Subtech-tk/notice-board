@@ -1,6 +1,9 @@
 <?php
 //ini_set('display_errors','0');	//to be set active when site goes live
+ini_set('date.timezone','Asia/Kolkata');
 // core file must be include in all pages
+
+date_default_timezone_set('Asia/Kolkata');
 
 include 'dbms/dbms_imp.php';
 //include_once "functions/";

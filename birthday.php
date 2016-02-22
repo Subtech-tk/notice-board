@@ -5,7 +5,7 @@
   include 'core.php';
   $title="Happy Birthday";
   $keywords="Birthday";
-  $description="Birthday Wish Page";
+  $description="celebrating birthdays...";
  
 ?>
 
@@ -52,7 +52,7 @@
 
               if ($count==0) 
               {
-                amazing('OOP\'s no Birthday Today',"a message","#");
+                amazing('waiting for a birthday',"oh seems like there are no cakes and candles ","#");
               }
               else
               {
