@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 //ini_set('display_errors','0');	//to be set active when site goes live
 ini_set('date.timezone','Asia/Kolkata');
 // core file must be include in all pages
