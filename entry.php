@@ -86,9 +86,7 @@
             
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
               <p>
-              <pre>
-                <?php echo $notice->description;?>
-              </pre>
+              <pre><?php echo $notice->description;?></pre>
               </p>
             </div>
 
@@ -117,7 +115,45 @@
             
             <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
               <?php
-                // including the comment forum if reqired in future
+                // including the comment forum
+                
+                if (islogin())  //this will work only if user is logged in
+                {
+
+                  $comment=$_POST['comment'];
+
+                  //var_dump($comment);
+
+                  if (isset($comment) && !empty($comment)) 
+                  {
+                    echo "comment is set and not empty";
+
+                    $comobj = new comment;
+                    $comobj->get_comment($ids,$comment);
+                    $comobj->check_exist();
+                    $comobj->add_comment();
+                    //var_dump($comobj);
+                    //die();
+                  }
+
+                }
+
+                // including the comment forum
+                include 'display/forms/comment.form.php';
+                if (islogin()) 
+                {
+                  // including the comments 
+                  include 'display/functions/comment.func.php';
+                  include 'dbms/dbms_imp.php';
+                  $resultc=$connection->query("SELECT `cid` FROM `comments` WHERE `nid`='$ids' ORDER BY `cid` DESC");
+                  mysqli_close($connection);
+
+                  while ($rows=$resultc->fetch_array())
+                  {
+                    $comm = new comment($rows[0]);
+                    comment($comm);
+                  }
+                }
               ?>
             </div>
           </div>

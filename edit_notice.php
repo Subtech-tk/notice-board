@@ -161,7 +161,8 @@
 
                     //var_dump($add_notice);	// only for testing 
                     
-                    //put a redirector to some page 
+                    //put a redirector to some page
+                    header('location: entry.php?ref='.$ids);   //to redirect to default notice page 
                   } 
                 } 
                 else 
