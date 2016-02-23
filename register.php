@@ -166,7 +166,7 @@
                     </fieldset>
                     <br/>
                     <fieldset>
-                      <legend>How old are You?:
+                      <legend>How old are You (date of Birth)?:
                         <?php 
                           if (isset($dob) && empty($dob)) 
                             {

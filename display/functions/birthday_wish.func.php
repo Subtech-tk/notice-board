@@ -55,7 +55,7 @@
     echo $bdobj->comment;
   ?>
   </div>
-  <nav class="comment__actions">
+  <!--<nav class="comment__actions">
     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
       <i class="material-icons" role="presentation">thumb_up</i>
       <span class="visuallyhidden">like comment</span>
@@ -68,7 +68,7 @@
       <i class="material-icons" role="presentation">share</i>
       <span class="visuallyhidden">share comment</span>
     </button>
-  </nav>
+  </nav>-->
 </div>
 <hr/>
 <?php

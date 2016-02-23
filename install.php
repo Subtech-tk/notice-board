@@ -78,6 +78,27 @@ if (isset($code) && !empty($code) && $code==$ccode)
 	{
 		echo "</br>Birthday table created.</br>";
 	}
+
+	$sql_comment_table="CREATE TABLE IF NOT EXISTS `comments` (
+		`cid` int(100) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'unique id to track comments',
+		  `userid` int(100) NOT NULL COMMENT 'user id who commented',
+		  `nid` int(100) NOT NULL COMMENT 'notice id on which its commented',
+		  `comment` text NOT NULL COMMENT 'comments',
+		  `date` date NOT NULL COMMENT 'date on which it is commented',
+		  `timed` time NOT NULL COMMENT 'time on which it is commented'
+		) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 COMMENT='birthday comment table';";
+	
+	$result_comment_table=$connection->query($sql_comment_table);
+
+	if (!$result_comment_table) 
+	{
+		echo "</br>Error in creating comment table  </br>".mysqli_error($connection)."</br>";
+	} 
+	else
+	{
+		echo "</br>comment table created.</br>";
+	}
+
 } 
 else
 {

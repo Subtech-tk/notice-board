@@ -1,5 +1,5 @@
 <?php
-  //login.php
+  //add_notice.php
   $page_name="add_notice.php";
 
   $title="Add notice";
