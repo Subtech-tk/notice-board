@@ -87,7 +87,7 @@
                   
                   // processing the image only iff data enterend are correct
 
-                  include 'temp.php';
+                  include 'img.proc.php';
 
                   $img=$fileName;
 
