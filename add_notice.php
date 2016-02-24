@@ -1,5 +1,6 @@
 <?php
-  //login.php
+	// add_notice.php
+
   $page_name="add_notice.php";
 
   $title="Add notice";
@@ -74,7 +75,7 @@
               $desc=$_POST['desc'];
               $piroity=$_POST['piroity'];   //can be null
               $exlink=$_POST['exlink'];     //can be null
-              $img=$_POST['img'];           //can be null
+              //$img=$_POST['img'];           //can be null
               
               // if the post data is set 
               if (isset($title) && isset($cat) && isset($tags) && isset($bref) && isset($desc)) 
@@ -84,6 +85,12 @@
               
                   $pass=true; //by default checking assume that the data inputed is Valid
                   
+                  // processing the image only iff data enterend are correct
+
+                  include 'temp.php';
+
+                  $img=$fileName;
+
                   // validate the data using validate function 
 
                   // neutralizing the data 
@@ -101,10 +108,7 @@
                   {
                     $exlink=netutralize($exlink,$connection);
                   }
-                  if (isset($img) && !empty($img))          //if image is uploaded -currently not working :( 
-                  {
-                    //netutralization script for it
-                  }
+                  // image processing is taken care by temp.php
                   mysqli_close($connection);
 
                   // contitions to check the input data
@@ -139,14 +143,21 @@
                     
                     if (isset($img) && !empty($img)) 
                     {
-                      // code for doing something with it
+                      $add_notice->img=$img;
                     } 
                     else 
                     {
-                      $add_notice->img='NULL';
+                      $add_notice->img='NULL';      //no image added so rest it to zero
                     }
                     
-                    $add_notice->add_notice($userid);
+                    if ($pass)    // add notice iff everything is correct 
+                    {
+                      $add_notice->add_notice($userid);
+                    }
+                    else
+                    {
+                      echo "Sorry, your notice was not added";
+                    }
 
                     //var_dump($add_notice);	// only for testing 
                     
@@ -159,7 +170,7 @@
                 }
               }  
             ?>
-                <form action="<?php echo $current_file; ?>" method="POST" enctype="" target="">
+                <form action="<?php echo $current_file; ?>" method="POST" enctype="multipart/form-data" target="">
                   <div class="mdl-textfield mdl-js-textfield">
                     
                     <fieldset>
@@ -237,7 +248,12 @@
                       </div>
                     </fieldset>
                     <br/>
-                      <fieldset>
+                    <fieldset>
+                    	<legend>Select image to upload:
+    					<input type="file" name="img" id="img">
+                    	</legend>
+                    </fieldset>
+                    <fieldset>
                       <legend>Pirorty (optional):
                       </legend>
                         <select class="mdl-textfield__input " name="piroity" size="1">
