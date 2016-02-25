@@ -87,7 +87,7 @@
                   
                   // processing the image only iff data enterend are correct
 
-                  include 'temp.php';
+                  include 'img.proc.php';
 
                   $img=$fileName;
 
@@ -156,7 +156,7 @@
                     }
                     else
                     {
-                      echo "Sorry, your notice was not added";
+                      echo "Sorry, your notice not added";
                     }
 
                     //var_dump($add_notice);	// only for testing 

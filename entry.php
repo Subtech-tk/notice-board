@@ -48,20 +48,22 @@
           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
             <style>
               <?php
-                if (isset($notice->img)) 
-                {
-                  $image="images/uploads/".$notice->img;
-                }
-                elseif ($notice->img == 'NULL')
+                if ($notice->img == 'NULL')
                 {
                   $image="images/road_big.jpg";
+                  $height='300';
+                }
+                elseif (isset($notice->img) && !empty($notice->img))
+                {
+                  $image="images/uploads/".$notice->img;
+                  list($width, $height) = getimagesize("$image");
                 }
               ?>
 
               .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media 
               {
                 /*background-image: url(<?php echo "$image" ?>);*/
-                height: 300px;
+                height: <?php echo $height."px"; ?>;
               }
             </style>
             <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url(<?php echo "$image"; ?>)">
