@@ -48,14 +48,15 @@
           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
             <style>
               <?php
-                if ($notice->img == 'NULL')
+                var_dump($notice);
+                if ($notice->img == 'NULL' || empty($notice->img))
                 {
                   $image="images/road_big.jpg";
                   $height='300';
                 }
                 elseif (isset($notice->img) && !empty($notice->img))
                 {
-                  $image="images/uploads/".$notice->img;
+                  $image="images/uploads/notices/".$notice->img;
                   list($width, $height) = getimagesize("$image");
                 }
               ?>

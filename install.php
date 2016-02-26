@@ -32,7 +32,22 @@ if (isset($code) && !empty($code) && $code==$ccode)
 	{
 		echo "</br>User table created.</br>";
 	}
-	
+
+	//expanding user table
+	$sql_user_table_alter1="ALTER TABLE `userdetail` ADD `img` text DEFAULT 'NULL' COMMENT 'image if any filename only'";
+
+	$result_user_table_update=$connection->query($sql_user_table_alter1);
+
+	if (!$result_user_table_update) 
+	{
+		echo "</br>Error in creating user table  </br>".mysqli_error($connection)."</br>";
+	} 
+	else
+	{
+		echo "</br>User table created.</br>";
+	}
+
+
 	$sql_notice_table="CREATE TABLE IF NOT EXISTS `notice` (
 		`id` int(10) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'hold unique id for quick referecne',
 		  `title` varchar(200) NOT NULL COMMENT 'title of notice',
@@ -98,6 +113,7 @@ if (isset($code) && !empty($code) && $code==$ccode)
 	{
 		echo "</br>comment table created.</br>";
 	}
+
 
 } 
 else

@@ -33,13 +33,14 @@
 		public $dob;		// user data-of-birth
 		public $pos;		// user position
 		public $level; 		// user level
+		public $pic;		// user image (pic)
 
 		public function get_user($id)
 		{
 			// opening the database connection 
 			include 'dbms/dbms_imp.php';
 
-			$uid=$id;
+			$this->uid=$id;
 			$resultb=$connection->query("SELECT * FROM `userdetail` WHERE `uniqueid`='$id'");
             $rowsuser=$resultb->fetch_array();
             $this->usn=$rowsuser[1];
@@ -49,6 +50,7 @@
             $this->dob=$rowsuser[6];
             $this->status=$rowsuser[7];
             $this->level=$rowsuser[8];
+            $this->pic=$rowsuser[9];
 
             //close the database connection 
             mysqli_close($connection);
