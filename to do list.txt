@@ -12,3 +12,13 @@ change the header to the drawer style
 add admin dashboard
 add notice adding feature
 
+
+
+revision 2.0
+
+these are the features added 
+
+now you can comment on the notices
+
+now images can also be uploaded (but can't be edited once uploaded)
+

@@ -85,7 +85,9 @@
               
                   $pass=true; //by default checking assume that the data inputed is Valid
                   
-                  // processing the image only iff data enterend are correct
+                  // processing the image only iff data enterend
+
+                  $target_dir = "images/uploads/notices";  //setting image directory to notice
 
                   include 'img.proc.php';
 
@@ -250,9 +252,10 @@
                     <br/>
                     <fieldset>
                     	<legend>Select image to upload:
-    					<input type="file" name="img" id="img">
+    					           <input type="file" name="img" id="img">
                     	</legend>
                     </fieldset>
+                    <br/>
                     <fieldset>
                       <legend>Pirorty (optional):
                       </legend>

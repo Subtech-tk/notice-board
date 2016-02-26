@@ -4,7 +4,7 @@
 
 // image uploading script
 
-$target_dir = "images/uploads/";
+$target_dir = "images/uploads/notices/";
 
 $uploadOk = 1;
 
@@ -65,6 +65,7 @@ else
     else 
     {
         echo "Sorry, there was an error uploading your file.";
+        $pass=false;
     }
 }
 ?>
