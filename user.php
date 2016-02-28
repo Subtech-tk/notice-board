@@ -96,6 +96,11 @@
           </div>
             <?php
               }
+              else
+              {
+                include_once 'display/functions/amazing.func.php';
+                amazing($heading='This page is in development',$content='This page is in development.',$link='#');
+              }
             ?>
           <!--navigation panel for large database-->
         </div>
