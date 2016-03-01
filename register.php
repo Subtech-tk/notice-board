@@ -1,5 +1,5 @@
 <?php
-  //login.php
+  //register.php
   $page_name="Register.php";
 
   $title="Join us";
